@@ -11,12 +11,11 @@ const Applicants = () => {
   const param = useParams()
   const paramID = param.id
   const dispatch = useDispatch()
-  const {Applicant} = useSelector(store=>store.appplication)
+  const {Applicant} = useSelector(store=>store.application)
   useEffect(()=>{
     const fetchAllApplicants = async()=>{
       try {
         const res =await axios.get(`${APPLICATION_API_END_POINT}/${paramID}/applicants` , {withCredentials: true} )
-        console.log(res.data);
         
         if(res.data.success){
         dispatch(SetAllApplicant(res.data.job))
@@ -32,7 +31,7 @@ const Applicants = () => {
     <div>
       <Navbar />
       <div className="max-w-7xl mx-auto">
-      <h1 className='font-bold text-xl my-5'>Applications {Applicant?.applications.length}</h1>
+      <h1 className='font-bold text-xl my-5'>Applications {Applicant?.applications.length || 0 }</h1>
         <ApplicantsTable/>
       </div>
     </div>
