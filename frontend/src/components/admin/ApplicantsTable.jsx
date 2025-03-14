@@ -49,7 +49,7 @@ const ApplicantsTable = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          { (Applicant?.applications || [])?.map((item) => (
+          { Applicant && Applicant?.applications?.map((item) => (
               <tr key={item._id}>
                 <TableCell>{item?.applicant?.fullname}</TableCell>
                 <TableCell>{item?.applicant?.email}</TableCell>
