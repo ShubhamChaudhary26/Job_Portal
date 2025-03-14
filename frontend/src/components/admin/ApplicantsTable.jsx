@@ -18,7 +18,7 @@ import axios from "axios";
 const shortlisted = ["Accepted", "Rejected"];
 
 const ApplicantsTable = () => {
-  const { Applicant } = useSelector((store) => store.appplication);
+  const { Applicant } = useSelector((store) => store.application);
   const Statushandler = async (status, id) => {
     try {
      
