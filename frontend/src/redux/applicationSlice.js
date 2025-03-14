@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const ApplicationSlice = createSlice({
     name: "application",
     initialState: {
-        Applicant: [],
+        Applicant: null,
     },
     reducers: {
         SetAllApplicant: (state, action) => {
