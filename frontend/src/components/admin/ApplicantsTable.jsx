@@ -49,7 +49,7 @@ const ApplicantsTable = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {Applicant &&
+          {Applicant > 0 &&
             Applicant?.applications?.map((item) => (
               <tr key={item._id}>
                 <TableCell>{item?.applicant?.fullname}</TableCell>
